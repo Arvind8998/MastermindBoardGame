@@ -1,0 +1,15 @@
+.header__container{
+    display: flex;
+    align-items: center;
+    max-width: 20rem;
+}
+
+.info_header{
+    margin-left: 0.4rem;
+}
+
+.logo_mastermind{
+    object-fit: contain;
+    width: 3rem;
+    height: 3rem;
+}

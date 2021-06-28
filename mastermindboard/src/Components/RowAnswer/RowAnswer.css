@@ -1,0 +1,16 @@
+.rowAnswer__container {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 10px;
+  width: 4rem;
+  grid-row-gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.rowAnswer{
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-left: 0.5rem;
+}
