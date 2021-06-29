@@ -8,13 +8,20 @@ import CheckIcon from "@material-ui/icons/Check"
 const Row = (props) => {
   const { rowNo, rowInfo } = props
   const [selectedCircle, fillCircle] = useState("")
-  const [{ selectedColour, rows }, dispatch] = useStateValue()
+  const [{ selectedColour, rows, aiAnswer }, dispatch] = useStateValue()
 
   let handleClick = (e) => {
+    if(e.target.parentNode.id === "submitIcon"){
+      isGameWonByUser() && alert("Game Won")
+    }
     dispatch({
       type: "UPDATE_ROWS",
       selectedCircle: rowNo + "_" + e.target.id,
     })
+  }
+
+  let isGameWonByUser = ()=>{
+    return Object.values(rowInfo).every((el,idx) => el.split(" ")[1] === aiAnswer[idx]);
   }
 
   let checkAllFilled = (rowInfo) => {
@@ -36,7 +43,7 @@ const Row = (props) => {
       {rowCreator()}
       {checkAllFilled(rowInfo) && (
         <div className="tickIcon">
-          <CheckIcon fontSize="large" fontWeight="bold" />
+          <CheckIcon id ={"submitIcon"} fontSize="large" fontWeight="bold" />
         </div>
       )}
       <RowAnswer />
