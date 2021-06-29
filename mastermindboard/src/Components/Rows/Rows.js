@@ -5,6 +5,7 @@ import UserOptions from "../UserOptions/UserOptions"
 import { useEffect, useState } from "react"
 import { useStateValue } from "../../StateProvider"
 
+
 const Rows = () => {
   const [{ rows, selectedColour }, dispatch] = useStateValue()
   let rowsData = []
@@ -22,7 +23,7 @@ const Rows = () => {
       rowsData: rowsData,
     })
   }, [dispatch])
-  
+
   return (
     <div className="rows__Container">
       <div>

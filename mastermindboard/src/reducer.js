@@ -1,6 +1,7 @@
 export const initialState = {
   selectedColour: "",
   rows: [],
+  aiAnswer: [{ 0: "greenColor" }, { 1: "tealColor" }, { 2: "blueColor" }, { 3: "violetColor" }],
 }
 
 const reducer = (state, action) => {

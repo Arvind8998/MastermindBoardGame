@@ -7,12 +7,12 @@ const UserOptions = () => {
   const [{ selectedColour }, dispatch] = useStateValue()
   useEffect(() => {
     let colourOptions = [
-      { 0: "yellow" },
-      { 1: "carrot" },
-      { 2: "green" },
-      { 3: "teal" },
-      { 4: "blue" },
-      { 5: "violet" },
+      { 0: "yellowColor" },
+      { 1: "carrotColor" },
+      { 2: "greenColor" },
+      { 3: "tealColor" },
+      { 4: "blueColor" },
+      { 5: "violetColor" },
     ]
     setOptions(colourOptions)
   }, [])

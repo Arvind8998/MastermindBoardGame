@@ -3,6 +3,7 @@ import "./Row.css"
 import RowAnswer from "../RowAnswer/RowAnswer"
 import { useStateValue } from "../../StateProvider"
 import { useEffect, useState } from "react"
+import CheckIcon from "@material-ui/icons/Check"
 
 const Row = (props) => {
   const { rowNo, rowInfo } = props
@@ -16,15 +17,15 @@ const Row = (props) => {
     })
   }
 
+  let checkAllFilled = (rowInfo) => {
+    return Object.values(rowInfo).every(el => el.includes("Color"));
+  }
+
   let rowCreator = () => {
     let rowCircles = []
     for (let key in rowInfo) {
       rowCircles.push(
-        <div
-          id={key}
-          key={"id" + key}
-          className={`row ${rowInfo[key]}`}
-        ></div>
+        <div id={key} key={"id" + key} className={`row ${rowInfo[key]}`}></div>
       )
     }
     return rowCircles
@@ -33,6 +34,11 @@ const Row = (props) => {
   return (
     <div onClick={handleClick} className="row_container">
       {rowCreator()}
+      {checkAllFilled(rowInfo) && (
+        <div className="tickIcon">
+          <CheckIcon fontSize="large" fontWeight="bold" />
+        </div>
+      )}
       <RowAnswer />
     </div>
   )

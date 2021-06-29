@@ -9,22 +9,22 @@
   border:1px solid lightgray;
   margin-top: 0.3rem
 }
-.yellow {
+.yellowColor {
   background-color: #ffb400;
 }
-.carrot {
+.carrotColor {
   background-color: #fa595e;
 }
-.green {
+.greenColor {
   background-color: #8ce071;
 }
-.teal {
+.tealColor {
   background-color: #00d1c1;
 }
-.blue {
+.blueColor {
   background-color: #007a87;
 }
-.violet {
+.violetColor {
   background-color: #7b0051;
 }
 

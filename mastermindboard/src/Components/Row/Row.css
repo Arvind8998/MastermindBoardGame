@@ -13,21 +13,28 @@
     padding: 10px;
 }
 
-.yellow {
+.yellowColor {
     background-color: #ffb400;
   }
-  .carrot {
+  .carrotColor {
     background-color: #fa595e;
   }
-  .green {
+  .greenColor {
     background-color: #8ce071;
   }
-  .teal {
+  .tealColor {
     background-color: #00d1c1;
   }
-  .blue {
+  .blueColor {
     background-color: #007a87;
   }
-  .violet {
+  .violetColor {
     background-color: #7b0051;
+  }
+
+  .tickIcon{
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    color: rgba(0, 128, 0, 0.746);
   }
