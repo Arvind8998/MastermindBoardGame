@@ -12,3 +12,22 @@
     border: 1px solid black;
     padding: 10px;
 }
+
+.yellow {
+    background-color: #ffb400;
+  }
+  .carrot {
+    background-color: #fa595e;
+  }
+  .green {
+    background-color: #8ce071;
+  }
+  .teal {
+    background-color: #00d1c1;
+  }
+  .blue {
+    background-color: #007a87;
+  }
+  .violet {
+    background-color: #7b0051;
+  }
