@@ -4,7 +4,7 @@ const RowAnswer = () => {
   return (
     <div className="rowAnswer__container">
       {new Array(4).fill().map((el, idx) => (
-        <div className="rowAnswer"></div>
+        <div key={"id" + idx} className="rowAnswer"></div>
       ))}
     </div>
   )

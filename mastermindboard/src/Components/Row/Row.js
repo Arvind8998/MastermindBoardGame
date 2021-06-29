@@ -6,7 +6,7 @@ const Row = () => {
   return (
     <div className="row_container">
       {new Array(4).fill().map((el, idx) => (
-          <div className="row"></div>
+          <div key={"id" + idx} className="row"></div>
       ))}
       <RowAnswer />
     </div>
