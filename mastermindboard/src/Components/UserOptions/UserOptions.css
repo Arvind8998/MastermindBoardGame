@@ -27,3 +27,7 @@
 .violet {
   background-color: #7b0051;
 }
+
+.selected{
+  border: 2px solid rgba(0, 0, 0, 0.603);
+}
