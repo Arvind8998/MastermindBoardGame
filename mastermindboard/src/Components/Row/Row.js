@@ -11,8 +11,10 @@ const Row = (props) => {
   const [{ selectedColour, rows, aiAnswer }, dispatch] = useStateValue()
 
   let handleClick = (e) => {
-    if(e.target.parentNode.id === "submitIcon"){
-      isGameWonByUser() && alert("Game Won")
+    if (e.target.parentNode.id === "submitIcon") {
+      if (isGameWonByUser()) {
+        alert("Game Won")
+      }
     }
     dispatch({
       type: "UPDATE_ROWS",
@@ -20,12 +22,14 @@ const Row = (props) => {
     })
   }
 
-  let isGameWonByUser = ()=>{
-    return Object.values(rowInfo).every((el,idx) => el.split(" ")[1] === aiAnswer[idx]);
+  let isGameWonByUser = () => {
+    return Object.values(rowInfo).every(
+      (el, idx) => el.split(" ")[1] === aiAnswer[idx]
+    )
   }
 
   let checkAllFilled = (rowInfo) => {
-    return Object.values(rowInfo).every(el => el.includes("Color"));
+    return Object.values(rowInfo).every((el) => el.includes("Color"))
   }
 
   let rowCreator = () => {
@@ -43,7 +47,7 @@ const Row = (props) => {
       {rowCreator()}
       {checkAllFilled(rowInfo) && (
         <div className="tickIcon">
-          <CheckIcon id ={"submitIcon"} fontSize="large" fontWeight="bold" />
+          <CheckIcon id={"submitIcon"} fontSize="large" fontWeight="bold" />
         </div>
       )}
       <RowAnswer />
