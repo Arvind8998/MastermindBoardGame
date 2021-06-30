@@ -1,7 +1,13 @@
 export const initialState = {
   selectedColour: "",
   rows: [],
-  aiAnswer: [{ 0: "greenColor" }, { 1: "tealColor" }, { 2: "blueColor" }, { 3: "violetColor" }],
+  aiAnswer: [
+    { 0: "greenColor" },
+    { 1: "tealColor" },
+    { 2: "blueColor" },
+    { 3: "violetColor" },
+  ],
+  isGameWon: false,
 }
 
 const reducer = (state, action) => {
@@ -18,12 +24,24 @@ const reducer = (state, action) => {
       }
     case "UPDATE_ROWS":
       const currRows = state.rows
-      const rowNo = action.selectedCircle.split("_")[0]
+      debugger
+      let rowNo = action.selectedCircle.split("_")[0]
       const circleNo = action.selectedCircle.split("_")[1]
       currRows[rowNo][circleNo] = state.selectedColour
       return {
         ...state,
         rows: currRows,
+      }
+    case "VALIDATE_ROW":
+      const rowNum = action.rowNo
+      const currRowData = state.rows[rowNum]
+      const isGameWon = Object.values(currRowData).every(
+        (el, idx) => el.split(" ")[1] === state.aiAnswer[idx]
+      )
+      debugger
+      return {
+        ...state,
+        isGameWon: isGameWon,
       }
     default:
       return state
