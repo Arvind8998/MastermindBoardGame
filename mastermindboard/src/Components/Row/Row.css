@@ -1,40 +1,41 @@
-.row{
-    border: 1px solid lightgray;
-    border-radius: 50%;
-    width: 3rem;
-    height: 3rem;
-    margin-left: 0.5rem;
+.row {
+  border: 1px solid lightgray;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  margin-left: 0.5rem;
 }
 
-.row_container{
-    margin-top: 1rem;
-    display: flex;
-    border: 1px solid black;
-    padding: 10px;
+.row_container {
+  margin-top: 1rem;
+  display: flex;
+  border: 1px solid black;
+  padding: 10px;
+  align-items: center;
 }
 
 .yellowColor {
-    background-color: #ffb400;
-  }
-  .carrotColor {
-    background-color: #fa595e;
-  }
-  .greenColor {
-    background-color: #8ce071;
-  }
-  .tealColor {
-    background-color: #00d1c1;
-  }
-  .blueColor {
-    background-color: #007a87;
-  }
-  .violetColor {
-    background-color: #7b0051;
-  }
+  background-color: #ffb400;
+}
+.carrotColor {
+  background-color: #fa595e;
+}
+.greenColor {
+  background-color: #8ce071;
+}
+.tealColor {
+  background-color: #00d1c1;
+}
+.blueColor {
+  background-color: #007a87;
+}
+.violetColor {
+  background-color: #7b0051;
+}
 
-  .tickIcon{
-    margin-left: 1rem;
-    margin-top: 0.5rem;
-    font-weight: bold;
-    color: rgba(0, 128, 0, 0.746);
-  }
+.tickIcon {
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: rgba(0, 128, 0, 0.746);
+}

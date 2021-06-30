@@ -12,15 +12,15 @@ const Row = (props) => {
     useStateValue()
 
   let handleClick = (e) => {
-    if (checkAllFilled(rowInfo)) {
-      isGameWon && alert("Game Won !")
-      return
-    } else if (e.target.parentNode.id === "submitIcon") {
+    debugger
+    if (e.target.parentElement.className === "tickIcon") {
       dispatch({
         type: "VALIDATE_ROW",
         rowNo: rowNo,
       })
-    } else if(e.target.id){
+    } else if (checkAllFilled(rowInfo)) {
+      return
+    } else if (e.target.id) {
       dispatch({
         type: "UPDATE_ROWS",
         selectedCircle: rowNo + "_" + e.target.id,
@@ -51,6 +51,7 @@ const Row = (props) => {
         </div>
       )}
       <RowAnswer />
+     
     </div>
   )
 }

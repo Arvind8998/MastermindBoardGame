@@ -7,7 +7,7 @@ import { useStateValue } from "../../StateProvider"
 
 
 const Rows = () => {
-  const [{ rows, selectedColour }, dispatch] = useStateValue()
+  const [{ rows, selectedColour,isGameWon }, dispatch] = useStateValue()
   let rowsData = []
 
   useEffect(() => {
@@ -34,6 +34,7 @@ const Rows = () => {
         ))}
       </div>
       <UserOptions />
+      {isGameWon && <h2>Game Won !!</h2>}
     </div>
   )
 }

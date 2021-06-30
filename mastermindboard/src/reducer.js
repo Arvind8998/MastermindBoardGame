@@ -35,8 +35,9 @@ const reducer = (state, action) => {
       const rowNum = action.rowNo
       const currRowData = state.rows[rowNum]
       const isGameWon = Object.values(currRowData).every(
-        (el, idx) => el.split(" ")[1] === state.aiAnswer[idx]
+        (el, idx) => el.split(" ")[1] === state.aiAnswer[idx][idx]
       )
+      debugger
       return {
         ...state,
         isGameWon: isGameWon,
