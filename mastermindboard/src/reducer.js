@@ -24,7 +24,6 @@ const reducer = (state, action) => {
       }
     case "UPDATE_ROWS":
       const currRows = state.rows
-      debugger
       let rowNo = action.selectedCircle.split("_")[0]
       const circleNo = action.selectedCircle.split("_")[1]
       currRows[rowNo][circleNo] = state.selectedColour
@@ -38,7 +37,6 @@ const reducer = (state, action) => {
       const isGameWon = Object.values(currRowData).every(
         (el, idx) => el.split(" ")[1] === state.aiAnswer[idx]
       )
-      debugger
       return {
         ...state,
         isGameWon: isGameWon,
