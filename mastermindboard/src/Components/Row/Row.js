@@ -12,7 +12,6 @@ const Row = (props) => {
     useStateValue()
 
   let handleClick = (e) => {
-    debugger
     if (e.target.parentElement.className === "tickIcon") {
       dispatch({
         type: "VALIDATE_ROW",
@@ -29,14 +28,14 @@ const Row = (props) => {
   }
 
   let checkAllFilled = (rowInfo) => {
-    return Object.values(rowInfo).every((el) => el.includes("Color"))
+    return Object.values(rowInfo).every((el) => el.color.includes("Color"))
   }
 
   let rowCreator = () => {
     let rowCircles = []
     for (let key in rowInfo) {
       rowCircles.push(
-        <div id={key} key={"id" + key} className={`row ${rowInfo[key]}`}></div>
+        <div id={key} key={"id" + key} className={`row ${rowInfo[key].color}`}></div>
       )
     }
     return rowCircles
@@ -50,7 +49,7 @@ const Row = (props) => {
           <CheckIcon id={"submitIcon"} fontSize="large" fontWeight="bold" />
         </div>
       )}
-      <RowAnswer />
+      <RowAnswer rowInfo={rowInfo} />
      
     </div>
   )

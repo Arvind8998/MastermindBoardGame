@@ -14,7 +14,7 @@ const Rows = () => {
     for (let i = 0; i < 10; i++) {
       let objData = {}
       for (let j = 0; j < 4; j++) {
-        objData[j] = "white"
+        objData[j] = {'color': "white", 'isCorrectMove': false, "isSubmitted": false}
       }
       rowsData.push(objData)
     }

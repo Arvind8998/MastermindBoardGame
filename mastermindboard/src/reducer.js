@@ -7,7 +7,7 @@ export const initialState = {
     { 2: "blueColor" },
     { 3: "violetColor" },
   ],
-  isGameWon: false,
+  isGameWon: null,
 }
 
 const reducer = (state, action) => {
@@ -26,7 +26,7 @@ const reducer = (state, action) => {
       const currRows = state.rows
       let rowNo = action.selectedCircle.split("_")[0]
       const circleNo = action.selectedCircle.split("_")[1]
-      currRows[rowNo][circleNo] = state.selectedColour
+      currRows[rowNo][circleNo].color = state.selectedColour
       return {
         ...state,
         rows: currRows,
@@ -34,12 +34,24 @@ const reducer = (state, action) => {
     case "VALIDATE_ROW":
       const rowNum = action.rowNo
       const currRowData = state.rows[rowNum]
-      const isGameWon = Object.values(currRowData).every(
-        (el, idx) => el.split(" ")[1] === state.aiAnswer[idx][idx]
-      )
+      let rows = state.rows
+      let isGameWon = true;
+      Object.values(currRowData).forEach((el, idx) => {
+        if (el.color.split(" ")[1] === state.aiAnswer[idx][idx]) {
+          currRowData[idx].isCorrectMove = true
+          currRowData[idx].isSubmitted = true
+        } else {
+          isGameWon = false
+          currRowData[idx].isCorrectMove = false
+          currRowData[idx].isSubmitted = true
+        }
+      })
       debugger
+      rows[rowNum] = currRowData
+
       return {
         ...state,
+        rows: rows,
         isGameWon: isGameWon,
       }
     default:

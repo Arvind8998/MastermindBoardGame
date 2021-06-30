@@ -7,10 +7,25 @@
   flex-shrink: 0;
 }
 
-.rowAnswer{
-    border: 1px solid black;
-    border-radius: 50%;
-    width: 0.8rem;
-    height: 0.8rem;
-    margin-left: 0.5rem;
+.rowAnswer {
+  border: 1px solid black;
+  border-radius: 50%;
+  margin-left: 0.5rem;
+  padding: 0.5px;
+  width:12px;
+  height:12px;
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.correct {
+  background-color: lightgray;
+}
+
+.incorrectMove {
+  position: absolute;
+  font-weight: bold;
+  font-size: 12px;
 }
